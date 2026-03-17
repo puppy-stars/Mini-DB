@@ -1,0 +1,704 @@
+{
+  "name": "minidb",
+  "displayName": "MiniDB - Database Manager",
+  "description": "A visual database manager for MySQL, PostgreSQL, SQLite, SQL Server and Oracle",
+  "version": "1.0.0",
+  "publisher": "minidb",
+  "license": "MIT",
+  "icon": "resources/favicon.ico",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/minidb/minidb.git"
+  },
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "keywords": [
+    "database",
+    "sql",
+    "mysql",
+    "postgresql",
+    "sqlite",
+    "sqlserver",
+    "oracle",
+    "ssh"
+  ],
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "minidb.openHome",
+        "title": "%minidb.openHome.title%",
+        "icon": "$(home)"
+      },
+      {
+        "command": "minidb.addConnection",
+        "title": "%minidb.addConnection.title%",
+        "icon": "$(add)"
+      },
+      {
+        "command": "minidb.refreshConnections",
+        "title": "%minidb.refreshConnections.title%",
+        "icon": "$(refresh)"
+      },
+      {
+        "command": "minidb.deleteConnection",
+        "title": "%minidb.deleteConnection.title%"
+      },
+      {
+        "command": "minidb.connect",
+        "title": "%minidb.connect.title%"
+      },
+      {
+        "command": "minidb.disconnect",
+        "title": "%minidb.disconnect.title%"
+      },
+      {
+        "command": "minidb.newQuery",
+        "title": "%minidb.newQuery.title%",
+        "icon": "$(new-file)"
+      },
+      {
+        "command": "minidb.executeQuery",
+        "title": "%minidb.executeQuery.title%",
+        "icon": "$(play)"
+      },
+      {
+        "command": "minidb.explainQuery",
+        "title": "%minidb.explainQuery.title%",
+        "icon": "$(graph)"
+      },
+      {
+        "command": "minidb.cancelQuery",
+        "title": "%minidb.cancelQuery.title%",
+        "icon": "$(debug-stop)"
+      },
+      {
+        "command": "minidb.showQueryHistory",
+        "title": "%minidb.showQueryHistory.title%",
+        "icon": "$(history)"
+      },
+      {
+        "command": "minidb.showFavoriteQueries",
+        "title": "%minidb.showFavoriteQueries.title%",
+        "icon": "$(star-full)"
+      },
+      {
+        "command": "minidb.toggleFavoriteQuery",
+        "title": "%minidb.toggleFavoriteQuery.title%",
+        "icon": "$(star-empty)"
+      },
+      {
+        "command": "minidb.searchObjects",
+        "title": "%minidb.searchObjects.title%",
+        "icon": "$(search)"
+      },
+      {
+        "command": "minidb.importData",
+        "title": "%minidb.importData.title%",
+        "icon": "$(cloud-upload)"
+      },
+      {
+        "command": "minidb.refreshTables",
+        "title": "%minidb.refreshTables.title%",
+        "icon": "$(refresh)"
+      },
+      {
+        "command": "minidb.viewTableData",
+        "title": "%minidb.viewTableData.title%"
+      },
+      {
+        "command": "minidb.editTableData",
+        "title": "%minidb.editTableData.title%",
+        "icon": "$(edit)"
+      },
+      {
+        "command": "minidb.editConnection",
+        "title": "%minidb.editConnection.title%"
+      },
+      {
+        "command": "minidb.selectConnection",
+        "title": "%minidb.selectConnection.title%"
+      },
+      {
+        "command": "minidb.switchLanguage",
+        "title": "%minidb.switchLanguage.title%",
+        "icon": "$(globe)"
+      },
+      {
+        "command": "minidb.viewTableRelations",
+        "title": "%minidb.viewTableRelations.title%",
+        "icon": "$(type-hierarchy)"
+      },
+      {
+        "command": "minidb.openSqlConsole",
+        "title": "%minidb.openSqlConsole.title%",
+        "icon": "$(terminal)"
+      },
+      {
+        "command": "minidb.viewTableStructure",
+        "title": "%minidb.viewTableStructure.title%",
+        "icon": "$(symbol-structure)"
+      },
+      {
+        "command": "minidb.formatSql",
+        "title": "%minidb.formatSql.title%",
+        "icon": "$(check)"
+      },
+      {
+        "command": "minidb.refreshMetadata",
+        "title": "%minidb.refreshMetadata.title%",
+        "icon": "$(refresh)"
+      },
+      {
+        "command": "minidb.menu.newQuery.en",
+        "title": "New Query"
+      },
+      {
+        "command": "minidb.menu.newQuery.zh",
+        "title": "新建查询"
+      },
+      {
+        "command": "minidb.menu.refreshTables.en",
+        "title": "Refresh"
+      },
+      {
+        "command": "minidb.menu.refreshTables.zh",
+        "title": "刷新"
+      },
+      {
+        "command": "minidb.menu.viewTableData.en",
+        "title": "View Table Data"
+      },
+      {
+        "command": "minidb.menu.viewTableData.zh",
+        "title": "查看表数据"
+      },
+      {
+        "command": "minidb.menu.editTableData.en",
+        "title": "Edit Table Data"
+      },
+      {
+        "command": "minidb.menu.editTableData.zh",
+        "title": "编辑表数据"
+      },
+      {
+        "command": "minidb.menu.importData.en",
+        "title": "Import Data to Table"
+      },
+      {
+        "command": "minidb.menu.importData.zh",
+        "title": "导入数据到表"
+      },
+      {
+        "command": "minidb.menu.viewTableStructure.en",
+        "title": "View Table Structure"
+      },
+      {
+        "command": "minidb.menu.viewTableStructure.zh",
+        "title": "查看表结构"
+      },
+      {
+        "command": "minidb.menu.viewTableRelations.en",
+        "title": "View Table Relations"
+      },
+      {
+        "command": "minidb.menu.viewTableRelations.zh",
+        "title": "查看表关系"
+      },
+      {
+        "command": "minidb.menu.openSqlConsole.en",
+        "title": "Open SQL Console"
+      },
+      {
+        "command": "minidb.menu.openSqlConsole.zh",
+        "title": "打开 SQL 控制台"
+      },
+      {
+        "command": "minidb.menu.connect.en",
+        "title": "Connect to Database"
+      },
+      {
+        "command": "minidb.menu.connect.zh",
+        "title": "连接数据库"
+      },
+      {
+        "command": "minidb.menu.disconnect.en",
+        "title": "Disconnect"
+      },
+      {
+        "command": "minidb.menu.disconnect.zh",
+        "title": "断开连接"
+      },
+      {
+        "command": "minidb.menu.editConnection.en",
+        "title": "Edit Connection"
+      },
+      {
+        "command": "minidb.menu.editConnection.zh",
+        "title": "编辑连接"
+      },
+      {
+        "command": "minidb.menu.deleteConnection.en",
+        "title": "Delete Connection"
+      },
+      {
+        "command": "minidb.menu.deleteConnection.zh",
+        "title": "删除连接"
+      }
+    ],
+    "keybindings": [
+      {
+        "command": "minidb.executeQuery",
+        "key": "ctrl+alt+e",
+        "mac": "cmd+alt+e",
+        "when": "editorTextFocus"
+      },
+      {
+        "command": "minidb.executeQuery",
+        "key": "f9",
+        "mac": "f9",
+        "when": "editorTextFocus"
+      },
+      {
+        "command": "minidb.explainQuery",
+        "key": "ctrl+alt+p",
+        "mac": "cmd+alt+p",
+        "when": "editorTextFocus"
+      },
+      {
+        "command": "minidb.cancelQuery",
+        "key": "ctrl+alt+x",
+        "mac": "cmd+alt+x",
+        "when": "editorTextFocus"
+      },
+      {
+        "command": "minidb.showQueryHistory",
+        "key": "ctrl+alt+h",
+        "mac": "cmd+alt+h",
+        "when": "editorTextFocus"
+      },
+      {
+        "command": "minidb.showFavoriteQueries",
+        "key": "ctrl+alt+j",
+        "mac": "cmd+alt+j",
+        "when": "editorTextFocus"
+      },
+      {
+        "command": "minidb.toggleFavoriteQuery",
+        "key": "ctrl+alt+s",
+        "mac": "cmd+alt+s",
+        "when": "editorTextFocus"
+      },
+      {
+        "command": "minidb.searchObjects",
+        "key": "ctrl+alt+o",
+        "mac": "cmd+alt+o",
+        "when": "editorTextFocus"
+      },
+      {
+        "command": "minidb.importData",
+        "key": "ctrl+alt+i",
+        "mac": "cmd+alt+i",
+        "when": "editorTextFocus"
+      },
+      {
+        "command": "minidb.formatSql",
+        "key": "shift+alt+f",
+        "mac": "shift+alt+f",
+        "when": "editorTextFocus && editorLangId == sql"
+      }
+    ],
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "minidb-explorer",
+          "title": "%minidb-explorer.title%",
+          "icon": "resources/database.svg"
+        }
+      ]
+    },
+    "views": {
+      "minidb-explorer": [
+        {
+          "id": "minidb.connections",
+          "name": "%minidb.connections.name%"
+        }
+      ]
+    },
+    "menus": {
+      "view/title": [
+        {
+          "command": "minidb.openHome",
+          "when": "view == minidb.connections",
+          "group": "navigation@0"
+        },
+        {
+          "command": "minidb.addConnection",
+          "when": "view == minidb.connections",
+          "group": "navigation@1"
+        },
+        {
+          "command": "minidb.refreshConnections",
+          "when": "view == minidb.connections",
+          "group": "navigation@2"
+        },
+        {
+          "command": "minidb.switchLanguage",
+          "when": "view == minidb.connections",
+          "group": "navigation@3"
+        },
+        {
+          "command": "minidb.searchObjects",
+          "when": "view == minidb.connections",
+          "group": "navigation@4"
+        }
+      ],
+      "view/item/context": [
+        {
+          "command": "minidb.menu.deleteConnection.en",
+          "when": "view == minidb.connections && viewItem =~ /connection/ && minidb.language == 'en'",
+          "group": "2_manage@2"
+        },
+        {
+          "command": "minidb.menu.deleteConnection.zh",
+          "when": "view == minidb.connections && viewItem =~ /connection/ && minidb.language == 'zh'",
+          "group": "2_manage@2"
+        },
+        {
+          "command": "minidb.menu.editConnection.en",
+          "when": "view == minidb.connections && viewItem =~ /connection/ && minidb.language == 'en'",
+          "group": "2_manage@1"
+        },
+        {
+          "command": "minidb.menu.editConnection.zh",
+          "when": "view == minidb.connections && viewItem =~ /connection/ && minidb.language == 'zh'",
+          "group": "2_manage@1"
+        },
+        {
+          "command": "minidb.menu.disconnect.en",
+          "when": "view == minidb.connections && viewItem == connectedConnection && minidb.language == 'en'",
+          "group": "1_connect@2"
+        },
+        {
+          "command": "minidb.menu.disconnect.zh",
+          "when": "view == minidb.connections && viewItem == connectedConnection && minidb.language == 'zh'",
+          "group": "1_connect@2"
+        },
+        {
+          "command": "minidb.menu.connect.en",
+          "when": "view == minidb.connections && viewItem == connection && minidb.language == 'en'",
+          "group": "1_connect@1"
+        },
+        {
+          "command": "minidb.menu.connect.zh",
+          "when": "view == minidb.connections && viewItem == connection && minidb.language == 'zh'",
+          "group": "1_connect@1"
+        },
+        {
+          "command": "minidb.menu.newQuery.en",
+          "when": "view == minidb.connections && viewItem =~ /connectedConnection|database|tablesFolder|viewsFolder/ && minidb.language == 'en'",
+          "group": "3_query@1"
+        },
+        {
+          "command": "minidb.menu.newQuery.zh",
+          "when": "view == minidb.connections && viewItem =~ /connectedConnection|database|tablesFolder|viewsFolder/ && minidb.language == 'zh'",
+          "group": "3_query@1"
+        },
+        {
+          "command": "minidb.menu.refreshTables.en",
+          "when": "view == minidb.connections && viewItem =~ /database|tablesFolder|viewsFolder/ && minidb.language == 'en'",
+          "group": "navigation@1"
+        },
+        {
+          "command": "minidb.menu.refreshTables.zh",
+          "when": "view == minidb.connections && viewItem =~ /database|tablesFolder|viewsFolder/ && minidb.language == 'zh'",
+          "group": "navigation@1"
+        },
+        {
+          "command": "minidb.menu.viewTableData.en",
+          "when": "view == minidb.connections && viewItem =~ /^(table|view)$/ && minidb.language == 'en'",
+          "group": "1_data@1"
+        },
+        {
+          "command": "minidb.menu.viewTableData.zh",
+          "when": "view == minidb.connections && viewItem =~ /^(table|view)$/ && minidb.language == 'zh'",
+          "group": "1_data@1"
+        },
+        {
+          "command": "minidb.menu.editTableData.en",
+          "when": "view == minidb.connections && viewItem =~ /^(table|view)$/ && minidb.language == 'en'",
+          "group": "1_data@2"
+        },
+        {
+          "command": "minidb.menu.editTableData.zh",
+          "when": "view == minidb.connections && viewItem =~ /^(table|view)$/ && minidb.language == 'zh'",
+          "group": "1_data@2"
+        },
+        {
+          "command": "minidb.menu.importData.en",
+          "when": "view == minidb.connections && viewItem == table && minidb.language == 'en'",
+          "group": "1_data@2.5"
+        },
+        {
+          "command": "minidb.menu.importData.zh",
+          "when": "view == minidb.connections && viewItem == table && minidb.language == 'zh'",
+          "group": "1_data@2.5"
+        },
+        {
+          "command": "minidb.menu.viewTableStructure.en",
+          "when": "view == minidb.connections && viewItem =~ /^(table|view)$/ && minidb.language == 'en'",
+          "group": "1_data@3"
+        },
+        {
+          "command": "minidb.menu.viewTableStructure.zh",
+          "when": "view == minidb.connections && viewItem =~ /^(table|view)$/ && minidb.language == 'zh'",
+          "group": "1_data@3"
+        },
+        {
+          "command": "minidb.menu.viewTableRelations.en",
+          "when": "view == minidb.connections && viewItem == database && minidb.language == 'en'",
+          "group": "2_relation@1"
+        },
+        {
+          "command": "minidb.menu.viewTableRelations.zh",
+          "when": "view == minidb.connections && viewItem == database && minidb.language == 'zh'",
+          "group": "2_relation@1"
+        },
+        {
+          "command": "minidb.menu.openSqlConsole.en",
+          "when": "view == minidb.connections && viewItem == database && minidb.language == 'en'",
+          "group": "3_console@1"
+        },
+        {
+          "command": "minidb.menu.openSqlConsole.zh",
+          "when": "view == minidb.connections && viewItem == database && minidb.language == 'zh'",
+          "group": "3_console@1"
+        }
+      ],
+      "editor/title": [
+        {
+          "command": "minidb.executeQuery",
+          "when": "resourceFilename =~ /\\.sql$/ && editorTextFocus",
+          "group": "navigation@1"
+        },
+        {
+          "command": "minidb.explainQuery",
+          "when": "resourceFilename =~ /\\.sql$/ && editorTextFocus",
+          "group": "navigation@1.2"
+        },
+        {
+          "command": "minidb.cancelQuery",
+          "when": "resourceFilename =~ /\\.sql$/ && editorTextFocus",
+          "group": "navigation@1.5"
+        },
+        {
+          "command": "minidb.showQueryHistory",
+          "when": "resourceFilename =~ /\\.sql$/ && editorTextFocus",
+          "group": "navigation@1.6"
+        },
+        {
+          "command": "minidb.showFavoriteQueries",
+          "when": "resourceFilename =~ /\\.sql$/ && editorTextFocus",
+          "group": "navigation@1.7"
+        },
+        {
+          "command": "minidb.toggleFavoriteQuery",
+          "when": "resourceFilename =~ /\\.sql$/ && editorTextFocus",
+          "group": "navigation@1.8"
+        },
+        {
+          "command": "minidb.searchObjects",
+          "when": "resourceFilename =~ /\\.sql$/ && editorTextFocus",
+          "group": "navigation@1.9"
+        },
+        {
+          "command": "minidb.importData",
+          "when": "resourceFilename =~ /\\.sql$/ && editorTextFocus",
+          "group": "navigation@1.95"
+        },
+        {
+          "command": "minidb.formatSql",
+          "when": "resourceFilename =~ /\\.sql$/ && editorTextFocus",
+          "group": "navigation@2"
+        }
+      ],
+      "commandPalette": [
+        {
+          "command": "minidb.menu.newQuery.en",
+          "when": "false"
+        },
+        {
+          "command": "minidb.menu.newQuery.zh",
+          "when": "false"
+        },
+        {
+          "command": "minidb.menu.refreshTables.en",
+          "when": "false"
+        },
+        {
+          "command": "minidb.menu.refreshTables.zh",
+          "when": "false"
+        },
+        {
+          "command": "minidb.menu.viewTableData.en",
+          "when": "false"
+        },
+        {
+          "command": "minidb.menu.viewTableData.zh",
+          "when": "false"
+        },
+        {
+          "command": "minidb.menu.editTableData.en",
+          "when": "false"
+        },
+        {
+          "command": "minidb.menu.editTableData.zh",
+          "when": "false"
+        },
+        {
+          "command": "minidb.menu.importData.en",
+          "when": "false"
+        },
+        {
+          "command": "minidb.menu.importData.zh",
+          "when": "false"
+        },
+        {
+          "command": "minidb.menu.viewTableStructure.en",
+          "when": "false"
+        },
+        {
+          "command": "minidb.menu.viewTableStructure.zh",
+          "when": "false"
+        },
+        {
+          "command": "minidb.menu.viewTableRelations.en",
+          "when": "false"
+        },
+        {
+          "command": "minidb.menu.viewTableRelations.zh",
+          "when": "false"
+        },
+        {
+          "command": "minidb.menu.openSqlConsole.en",
+          "when": "false"
+        },
+        {
+          "command": "minidb.menu.openSqlConsole.zh",
+          "when": "false"
+        },
+        {
+          "command": "minidb.menu.connect.en",
+          "when": "false"
+        },
+        {
+          "command": "minidb.menu.connect.zh",
+          "when": "false"
+        },
+        {
+          "command": "minidb.menu.disconnect.en",
+          "when": "false"
+        },
+        {
+          "command": "minidb.menu.disconnect.zh",
+          "when": "false"
+        },
+        {
+          "command": "minidb.menu.editConnection.en",
+          "when": "false"
+        },
+        {
+          "command": "minidb.menu.editConnection.zh",
+          "when": "false"
+        },
+        {
+          "command": "minidb.menu.deleteConnection.en",
+          "when": "false"
+        },
+        {
+          "command": "minidb.menu.deleteConnection.zh",
+          "when": "false"
+        }
+      ]
+    },
+    "configuration": {
+      "title": "MiniDB",
+      "properties": {
+        "minidb.maxResults": {
+          "type": "number",
+          "default": 1000,
+          "description": "Maximum number of rows to display in query results"
+        },
+        "minidb.queryTimeout": {
+          "type": "number",
+          "default": 30000,
+          "description": "Query timeout in milliseconds"
+        },
+        "minidb.language": {
+          "type": "string",
+          "default": "en",
+          "enum": [
+            "en",
+            "zh"
+          ],
+          "description": "Display language (en = English, zh = Chinese)"
+        },
+        "minidb.confirmRiskySql": {
+          "type": "boolean",
+          "default": true,
+          "description": "Require confirmation before executing high-risk SQL (UPDATE/DELETE/TRUNCATE/DROP/ALTER)."
+        },
+        "minidb.startupRestoreStrategy": {
+          "type": "string",
+          "default": "contextOnly",
+          "enum": [
+            "contextOnly",
+            "autoConnect"
+          ],
+          "enumDescriptions": [
+            "Restore only the last active connection and database context.",
+            "Restore context and automatically reconnect on startup."
+          ],
+          "description": "Startup restore behavior for last active database context."
+        }
+      }
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "lint": "eslint src --ext ts",
+    "test": "npm run compile && node tests/importParser.test.js && node tests/dataExporter.test.js"
+  },
+  "devDependencies": {
+    "@types/mssql": "^9.1.9",
+    "@types/mysql": "^2.15.24",
+    "@types/node": "^20.10.0",
+    "@types/oracledb": "^6.10.1",
+    "@types/pg": "^8.10.9",
+    "@types/sqlite3": "^3.1.11",
+    "@types/vscode": "^1.85.0",
+    "@typescript-eslint/eslint-plugin": "^6.13.0",
+    "@typescript-eslint/parser": "^6.13.0",
+    "eslint": "^8.54.0",
+    "typescript": "^5.3.2"
+  },
+  "dependencies": {
+    "@types/ssh2": "^1.15.5",
+    "mssql": "^10.0.2",
+    "mysql2": "^3.6.5",
+    "oracledb": "^6.5.0",
+    "pg": "^8.11.3",
+    "sqlite": "^5.0.1",
+    "sqlite3": "^5.1.7",
+    "ssh2": "^1.17.0"
+  }
+}

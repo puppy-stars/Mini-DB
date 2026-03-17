@@ -1,0 +1,92 @@
+name: Bug Report
+description: Report a reproducible problem in MiniDB
+title: "[Bug]: "
+labels:
+  - bug
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for reporting a problem.
+
+        Please provide as much detail as you can. English or Chinese is fine.
+
+  - type: dropdown
+    id: database_type
+    attributes:
+      label: Database type
+      description: Which database were you using when the issue happened?
+      options:
+        - MySQL
+        - PostgreSQL
+        - SQLite
+        - SQL Server
+        - Oracle
+        - Multiple / Not sure
+    validations:
+      required: true
+
+  - type: input
+    id: extension_version
+    attributes:
+      label: MiniDB version
+      description: Extension version, commit hash, or branch name
+      placeholder: 1.0.0
+    validations:
+      required: true
+
+  - type: input
+    id: vscode_version
+    attributes:
+      label: VS Code version
+      placeholder: 1.97.0
+    validations:
+      required: true
+
+  - type: input
+    id: operating_system
+    attributes:
+      label: Operating system
+      placeholder: Windows 11 / macOS 15 / Ubuntu 24.04
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      description: Tell us exactly how to reproduce the issue
+      placeholder: |
+        1. Open MiniDB
+        2. Connect to ...
+        3. Run ...
+        4. See error
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected_behavior
+    attributes:
+      label: Expected behavior
+    validations:
+      required: true
+
+  - type: textarea
+    id: actual_behavior
+    attributes:
+      label: Actual behavior
+    validations:
+      required: true
+
+  - type: textarea
+    id: logs
+    attributes:
+      label: Error messages, logs, or screenshots
+      description: Remove passwords, connection strings, keys, and other sensitive data before posting
+      render: shell
+
+  - type: textarea
+    id: additional_context
+    attributes:
+      label: Additional context
+      description: Anything else that would help with debugging

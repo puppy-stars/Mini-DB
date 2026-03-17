@@ -1,0 +1,9 @@
+.github/**
+.vscode/**
+src/**
+tests/**
+.eslintrc.json
+tsconfig.json
+package-lock.json
+_tmp*
+*.vsix

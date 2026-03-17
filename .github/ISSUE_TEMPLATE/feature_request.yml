@@ -1,0 +1,61 @@
+name: Feature Request
+description: Suggest an improvement for MiniDB
+title: "[Feature]: "
+labels:
+  - enhancement
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for sharing an idea.
+
+        Please describe the workflow problem first, then the solution you would like to see. English or Chinese is fine.
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem to solve
+      description: What workflow is difficult, missing, or frustrating today?
+    validations:
+      required: true
+
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed solution
+      description: What would you like MiniDB to do?
+    validations:
+      required: true
+
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives considered
+      description: What other approaches did you consider?
+
+  - type: dropdown
+    id: database_scope
+    attributes:
+      label: Database scope
+      description: Which databases would this feature affect?
+      options:
+        - All supported databases
+        - MySQL
+        - PostgreSQL
+        - SQLite
+        - SQL Server
+        - Oracle
+        - Not sure yet
+    validations:
+      required: true
+
+  - type: textarea
+    id: examples
+    attributes:
+      label: Examples or references
+      description: Mockups, example SQL tools, screenshots, or sample workflows
+
+  - type: textarea
+    id: additional_context
+    attributes:
+      label: Additional context
