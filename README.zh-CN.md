@@ -64,6 +64,8 @@ npm test
 npx @vscode/vsce package
 ```
 
+如果你打算通过 GitHub 而不是 VS Code Marketplace 分发 MiniDB，可以把生成好的 `.vsix` 文件直接作为 GitHub Release 附件上传。
+
 ## 项目说明
 
 - SQLite 连接使用本地数据库文件路径。
@@ -84,8 +86,8 @@ npx @vscode/vsce package
 
 ## 发布前建议
 
-- 如果后续要发布到 VS Code Marketplace，请把 `package.json` 里的 `publisher` 改成你的真实发布者 ID。
-- 给仓库首页和 Marketplace 页面补几张截图或一段演示 GIF。
+- 给仓库首页补几张截图或一段演示 GIF。
+- 创建 GitHub Release，并把生成好的 `.vsix` 包作为附件上传。
 - 在你计划支持的操作系统上各跑一遍验证。
 
 ## 许可证

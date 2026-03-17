@@ -64,6 +64,8 @@ Create a local `.vsix` package with:
 npx @vscode/vsce package
 ```
 
+If you plan to distribute MiniDB through GitHub instead of the VS Code Marketplace, attach the generated `.vsix` file to a GitHub Release.
+
 ## Project Notes
 
 - SQLite connections use a local file path.
@@ -84,8 +86,8 @@ If you are opening an issue, please use the GitHub templates so bug reports incl
 
 ## Recommended Before Publishing
 
-- Update the `publisher` field in `package.json` if you plan to publish to the VS Code Marketplace.
-- Add screenshots or a short demo GIF for the repository and marketplace page.
+- Add screenshots or a short demo GIF for the repository page.
+- Create a GitHub Release and attach the generated `.vsix` package.
 - Verify the extension on the operating systems you plan to support.
 
 ## License
