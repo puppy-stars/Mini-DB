@@ -8,7 +8,11 @@
   "icon": "resources/favicon.ico",
   "repository": {
     "type": "git",
-    "url": "https://github.com/minidb/minidb.git"
+    "url": "https://github.com/puppy-stars/Mini-DB.git"
+  },
+  "homepage": "https://github.com/puppy-stars/Mini-DB#readme",
+  "bugs": {
+    "url": "https://github.com/puppy-stars/Mini-DB/issues"
   },
   "engines": {
     "vscode": "^1.85.0"

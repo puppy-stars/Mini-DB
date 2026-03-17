@@ -1,5 +1,9 @@
 # MiniDB
 
+[English](./README.md) | [简体中文](./README.zh-CN.md)
+
+[![CI](https://github.com/puppy-stars/Mini-DB/actions/workflows/ci.yml/badge.svg)](https://github.com/puppy-stars/Mini-DB/actions/workflows/ci.yml)
+
 MiniDB is a VS Code extension for browsing and querying MySQL, PostgreSQL, SQLite, SQL Server, and Oracle databases without leaving the editor.
 
 ## Highlights
@@ -80,7 +84,6 @@ If you are opening an issue, please use the GitHub templates so bug reports incl
 
 ## Recommended Before Publishing
 
-- Update the repository URL in `package.json` to your real GitHub repository.
 - Update the `publisher` field in `package.json` if you plan to publish to the VS Code Marketplace.
 - Add screenshots or a short demo GIF for the repository and marketplace page.
 - Verify the extension on the operating systems you plan to support.
